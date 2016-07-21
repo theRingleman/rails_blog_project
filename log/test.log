@@ -1431,3 +1431,105 @@
   [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
   [1m[35m (0.1ms)[0m  begin transaction
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'joesmith1@example.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'joesmith2@example.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'joesmith3@example.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'joe@example.com' LIMIT 1[0m
+  [1m[35mSQL (2.0ms)[0m  INSERT INTO "users" ("first_name", "last_name", "encrypted_password", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Joe"], ["last_name", "Smith"], ["encrypted_password", "$2a$04$W2XGXaXWLwjHtTTsKBWi/O98HT.MzOorc9qoWkUndxTtWq3wbqYHW"], ["email", "joe@example.com"], ["created_at", "2016-07-21 03:49:42.452207"], ["updated_at", "2016-07-21 03:49:42.452207"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'joe@example.com' LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'joe@example.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "joe@example.com"], ["encrypted_password", "$2a$04$irsb/GF6UZUhLpUEPTS3K.GYrxkpMYY2C8E/O20vH0VVN.BcVJbhW"], ["first_name", "Joe"], ["last_name", "Smith"], ["created_at", "2016-07-21 03:49:42.468813"], ["updated_at", "2016-07-21 03:49:42.468813"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'snape@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "snape@example.com"], ["encrypted_password", "$2a$04$UiKjM/93h13grLVKG3pw6.eBrYhcyPfj1SB4uwMoSx2YVizqEUDb."], ["first_name", "Serverous"], ["last_name", "Snape"], ["created_at", "2016-07-21 03:49:42.479176"], ["updated_at", "2016-07-21 03:49:42.479176"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'joel@example.com' LIMIT 1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "joel@example.com"], ["encrypted_password", "$2a$04$YtbSDrXJ4tSirFkYLX9X2OWCuwHxhLz1z0Q9W.sgFM93SxAxdR.Hi"], ["first_name", "Jon"], ["last_name", "Johnson"], ["created_at", "2016-07-21 03:49:42.483985"], ["updated_at", "2016-07-21 03:49:42.483985"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE (last_name LIKE 'S%')  ORDER BY "users"."last_name" ASC[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'joe@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["email", "joe@example.com"], ["encrypted_password", "$2a$04$2FO3sytKrFVCaYHjC6VLGueFy66EkS4/OwRL4lTfQXzRlIhAy..MK"], ["first_name", "Joe"], ["last_name", "Smith"], ["created_at", "2016-07-21 03:49:42.493613"], ["updated_at", "2016-07-21 03:49:42.493613"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'snape@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["email", "snape@example.com"], ["encrypted_password", "$2a$04$DM5ckjpHMmflMJuGOZ7pnuJYdNFtRd6/cL91F6Aj1RS4HiwHsgvZa"], ["first_name", "Serverous"], ["last_name", "Snape"], ["created_at", "2016-07-21 03:49:42.497407"], ["updated_at", "2016-07-21 03:49:42.497407"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'joel@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["email", "joel@example.com"], ["encrypted_password", "$2a$04$Sito5/v9odaz8iHpJ/1FEeJEj36X3uPLixueSHupjfiTyDsm3Qk2S"], ["first_name", "Jon"], ["last_name", "Johnson"], ["created_at", "2016-07-21 03:49:42.505120"], ["updated_at", "2016-07-21 03:49:42.505120"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (last_name LIKE 'S%')  ORDER BY "users"."last_name" ASC
+  [1m[36m (1.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'joesmith1@example.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'joesmith2@example.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'joesmith3@example.com' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'joe@example.com' LIMIT 1[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "users" ("first_name", "last_name", "encrypted_password", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Joe"], ["last_name", "Smith"], ["encrypted_password", "$2a$04$Lr6QjoaWzrT.b0jeKE.RAu5Z4ZIufe9kc32yKfrNUun0jeqUcRiga"], ["email", "joe@example.com"], ["created_at", "2016-07-21 03:50:36.038654"], ["updated_at", "2016-07-21 03:50:36.038654"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'joe@example.com' LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'joe@example.com' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "joe@example.com"], ["encrypted_password", "$2a$04$.iKQn/hLb2Ls3aKJc9fwGelkdnqoSledwz09dq9pxlzgYlUFvujT6"], ["first_name", "Joe"], ["last_name", "Smith"], ["created_at", "2016-07-21 03:50:36.052274"], ["updated_at", "2016-07-21 03:50:36.052274"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'snape@example.com' LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "snape@example.com"], ["encrypted_password", "$2a$04$V2j/fXAGJ.BLui6L6yHetOjPKGA9pZs2uJg6I0G5wVNb3yETYRRfm"], ["first_name", "Serverous"], ["last_name", "Snape"], ["created_at", "2016-07-21 03:50:36.059391"], ["updated_at", "2016-07-21 03:50:36.059391"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'joel@example.com' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "joel@example.com"], ["encrypted_password", "$2a$04$s7ZAzfQS0/4DjO4BgYRiru3LgbL64R6xexsQcxMIHHx64ZHFEv6P."], ["first_name", "Jon"], ["last_name", "Johnson"], ["created_at", "2016-07-21 03:50:36.068540"], ["updated_at", "2016-07-21 03:50:36.068540"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE (last_name LIKE 'S%')  ORDER BY "users"."last_name" ASC[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'joe@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["email", "joe@example.com"], ["encrypted_password", "$2a$04$GH4mHO5aQc.sJjfpl1muU.3cHCvAWrxFM0dzpibFRzXVRLqlcA146"], ["first_name", "Joe"], ["last_name", "Smith"], ["created_at", "2016-07-21 03:50:36.078371"], ["updated_at", "2016-07-21 03:50:36.078371"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'snape@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["email", "snape@example.com"], ["encrypted_password", "$2a$04$ZjEY1wje7WVpVNP7OR3RLeVCnmnCkIwSJACDn8PBS7V/Wj3VkwmsG"], ["first_name", "Serverous"], ["last_name", "Snape"], ["created_at", "2016-07-21 03:50:36.082381"], ["updated_at", "2016-07-21 03:50:36.082381"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'joel@example.com' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["email", "joel@example.com"], ["encrypted_password", "$2a$04$kL/V.X8ppEldF4jqKvvRH.6EOautKBnooestJ6wbb6fTH5E0aQ9zm"], ["first_name", "Jon"], ["last_name", "Johnson"], ["created_at", "2016-07-21 03:50:36.086389"], ["updated_at", "2016-07-21 03:50:36.086389"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE (last_name LIKE 'S%')  ORDER BY "users"."last_name" ASC
+  [1m[36m (1.7ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
