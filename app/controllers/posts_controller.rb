@@ -19,6 +19,10 @@ class PostsController < ApplicationController
   end
 
   def create
+    @post = Post.create(post_params)
+    @post.author = current_user
+    @post.save
+    redirect_to post_path(@post)
   end
 
   def destroy
@@ -30,5 +34,9 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def post_params
+    params.require(:post).permit(:title, :content)
   end
 end
