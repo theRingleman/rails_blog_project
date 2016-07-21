@@ -1,21 +1,17 @@
 require 'rails_helper'
 
 describe User do
+  it "has a valid factory set up" do
+    expect(FactoryGirl.build(:user)).to be_valid
+  end
+
   it "is invalid without an email address" do
-    user = User.new(
-    email: "",
-    password: "password"
-    )
+    user = FactoryGirl.build(:user, email: nil)
     expect(user).to be_invalid
   end
 
   it "is valid with an email address" do
-    user = User.new(
-      email: "joe@example.com",
-      password: "password",
-      first_name: "Joe",
-      last_name: "Example"
-    )
+    user = FactoryGirl.build(:user)
     expect(user).to be_valid
   end
 

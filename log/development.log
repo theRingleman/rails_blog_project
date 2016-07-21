@@ -2253,3 +2253,12 @@ Processing by StaticController#home as HTML
   Rendered static/home.html.slim within layouts/application (2.1ms)
   Rendered layouts/_navigation.html.slim (0.4ms)
 Completed 200 OK in 72ms (Views: 71.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-07-20 20:10:39 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticController#home as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered static/home.html.slim within layouts/application (51.6ms)
+  Rendered layouts/_navigation.html.slim (16.9ms)
+Completed 200 OK in 695ms (Views: 680.9ms | ActiveRecord: 1.3ms)
