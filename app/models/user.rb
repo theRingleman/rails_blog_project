@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-  has_many :posts
+  has_many :posts, :foreign_key => "author_id"
 
   def full_name
     "#{self.first_name} #{self.last_name}"

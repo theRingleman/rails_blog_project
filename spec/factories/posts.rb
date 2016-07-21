@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :post do
-    user nil
+    title "Awesome Blog Post"
+    content "This is my awesome post and you are jealous."
   end
 end
