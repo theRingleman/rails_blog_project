@@ -15,12 +15,15 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post = Post.new
   end
 
   def create
   end
 
   def destroy
+    @post.delete
+    redirect_to posts_path
   end
 
   private

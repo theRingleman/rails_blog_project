@@ -1,0 +1,8 @@
+.container
+
+  h1= @post.title
+
+  p= @post.content
+
+  p
+    | Author: #{@post.author.full_name}
