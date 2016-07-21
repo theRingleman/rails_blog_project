@@ -5,5 +5,5 @@ nav class="navbar navbar-default" role="navigation"
         | theRingleman
     ul class="nav navbar-nav navbar-right"
       - if current_user
-        li
-          = link_to "Logout", destroy_user_session_path, method: "delete"
+        li= link_to "Blog", posts_path
+        li= link_to "Logout", destroy_user_session_path, method: "delete"
