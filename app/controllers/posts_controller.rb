@@ -24,6 +24,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    authorize @post
     @post = Post.create(post_params)
     @post.author = current_user
     @post.save
@@ -31,6 +32,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    authorize @post
     @post.delete
     redirect_to posts_path
   end
