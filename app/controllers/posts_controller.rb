@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :require_login, only: [:show, :edit, :update, :new, :create, :destroy]
+  before_action :require_login, only: [:edit, :update, :new, :create, :destroy]
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   def index
     @posts = Post.all
@@ -10,13 +11,16 @@ class PostsController < ApplicationController
   end
 
   def edit
+    authorize @post
   end
 
   def update
+    authorize @post
   end
 
   def new
     @post = Post.new
+    authorize @post
   end
 
   def create

@@ -21,4 +21,14 @@ class ApplicationController < ActionController::Base
       redirect_to new_user_session_path
     end
   end
+
+  def user_not_authorized
+    if current_user.full_name == "Jeremiah Wodke"
+      flash[:warning] = "You suck!"
+      redirect_to(request.referrer || root_path)
+    else
+      flash[:warning] = "You are not authorized to perform this action."
+      redirect_to(request.referrer || root_path)
+    end
+  end
 end
