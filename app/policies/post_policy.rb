@@ -4,11 +4,11 @@ class PostPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin?
+    user.admin? || record.author == user
   end
 
   def edit?
-    user.admin?
+    user.admin? || record.author == user
   end
 
   def create?
