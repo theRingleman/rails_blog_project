@@ -7,5 +7,5 @@
   p
     | Author: #{@post.author.full_name}
 
-  - if current_user.admin?
+  - if policy(@post).edit?
     = link_to "Edit", edit_post_path(@post)
