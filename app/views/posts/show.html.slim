@@ -7,6 +7,15 @@
   p
     | Author: #{@post.author.full_name}
 
+  .comments
+    - @post.comments.each do |comment|
+      .comment
+      p
+        => comment.user.full_name
+        | says:
+        br
+        =< comment.content
+
   - if policy(@post).edit?
     => link_to "Edit", edit_post_path(@post)
 
