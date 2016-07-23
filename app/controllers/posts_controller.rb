@@ -27,8 +27,11 @@ class PostsController < ApplicationController
     @post = Post.create(post_params)
     @post.author = current_user
     authorize @post
-    @post.save
-    redirect_to post_path(@post)
+    if @post.save
+      redirect_to post_path(@post)
+    else
+      render "new"
+    end
   end
 
   def destroy
