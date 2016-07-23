@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
 
   has_many :posts, :foreign_key => "author_id"
+  has_many :comments, through: :posts
 
   def full_name
     "#{self.first_name} #{self.last_name}"
