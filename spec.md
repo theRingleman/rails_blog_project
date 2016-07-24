@@ -12,7 +12,7 @@ Specs:
 - [x] Include signup (how e.g. Devise) - I have Devise for the signup process
 - [x] Include login (how e.g. Devise) - I have Devise for the login process
 - [x] Include logout (how e.g. Devise) - I also use devise for the logout process
-- [ ] Include third party signup/login (how e.g. Devise/OmniAuth)
+- [x] Include third party signup/login (how e.g. Devise/OmniAuth) - users can signup and login with facebook
 - [x] Include nested resource show or index (URL e.g. users/2/recipes) - post/post_id/comments is the index page for comments
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients) - Users can comment on posts
 - [x] Include form display of validation errors (form URL e.g. /recipes/new) - My signup feature and creating a new post show errors.
