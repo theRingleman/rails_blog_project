@@ -1,0 +1,8 @@
+.container
+  ul
+    - @users.each do |user|
+      li
+        p= user.full_name
+        p
+          | Admin:
+          =< user.admin?
