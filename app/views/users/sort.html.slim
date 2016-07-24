@@ -1,8 +1,4 @@
 .container
-  = form_tag("users/sort", method: "get") do
-    = label_tag(:q, "Sort by:")
-    = text_field_tag(:q)
-    = submit_tag("Sort")
   ul
     - @users.each do |user|
       li
