@@ -15,6 +15,9 @@ class PostsController < ApplicationController
 
   def update
     authorize @post
+    @post.update(post_params)
+    @post.save
+    redirect_to @post
   end
 
   def new
