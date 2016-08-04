@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   resources :users, only: [:show, :index]
   root 'static#home'
-  get 'sort', to: 'users#sort'
+  post 'sort', to: 'users#sort'
 end

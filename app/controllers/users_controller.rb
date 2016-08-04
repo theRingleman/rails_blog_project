@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   end
 
   def sort
-    @users = User.sort_by(params[:q])
+    @users = User.by_letter(params[:q])
+    render :index
   end
 
   def show

@@ -1,5 +1,5 @@
 .container
-  = form_tag("users/sort", method: "get") do
+  = form_tag(sort_path) do
     = label_tag(:q, "Sort by:")
     = text_field_tag(:q)
     = submit_tag("Sort")
