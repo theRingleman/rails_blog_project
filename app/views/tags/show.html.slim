@@ -1,0 +1,9 @@
+.container
+
+  h1
+    = @tag.name
+
+  ul
+    - @tag.posts.each do |post|
+      li
+        = link_to post.title, post
