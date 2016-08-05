@@ -15,6 +15,8 @@
   .comments
     h2 Comments:
 
+    = link_to "Add a comment", new_post_comment_path(@post) 
+
     - @post.comments.each do |comment|
       == render partial: "comments/comment", locals: {comment: comment}
 
