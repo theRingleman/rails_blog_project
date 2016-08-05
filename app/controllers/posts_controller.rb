@@ -30,7 +30,7 @@ class PostsController < ApplicationController
     @post.author = current_user
     authorize @post
     if @post.save
-      redirect_to post_path(@post)
+      redirect_to @post
     else
       render "new"
     end
@@ -49,6 +49,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, tag_ids:[], tags_attributes: [:name])
   end
 end
