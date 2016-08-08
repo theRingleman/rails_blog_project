@@ -15,7 +15,9 @@ class PostsController < ApplicationController
 
   def update
     authorize @post
+    comment = Comment.create(content: params["post"]["comments_attributes"]["0"]["content"], user_id:  current_user.id)
     @post.update(post_params)
+    @post.comments << comment
     @post.save
     redirect_to @post
   end

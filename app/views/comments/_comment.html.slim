@@ -1,8 +1,6 @@
 .comment
-
-- if comment.user
-  p
-    => comment.user.full_name
-    | says:
-  br
-  =< comment.content
+  - if comment.user
+    p
+      => comment.user.full_name
+      | says:
+    =< comment.content

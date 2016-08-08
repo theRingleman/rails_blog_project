@@ -16,16 +16,14 @@
     h2 Comments:
 
     - if current_user
-      = form_for @post do |f|
-        = f.fields_for :comments, @post.comments.build do |comment_fields|
-          = comment_fields.label "Add a comment: "
-          br/
-          = comment_fields.text_area :content
-          br/
-        = f.submit "Add Comment"
+      == render partial: 'comment_form', locals: {post: @post}
 
     - @post.comments.each do |comment|
-      == render partial: "comments/comment", locals: {comment: comment}
+      p
+        - if comment.user
+          => comment.user.full_name
+          | says:
+          =< comment.content
 
 
   - if policy(@post).edit?
