@@ -15,10 +15,18 @@
   .comments
     h2 Comments:
 
-    = link_to "Add a comment", new_post_comment_path(@post) 
+    - if current_user
+      = form_for @post do |f|
+        = f.fields_for :comments, @post.comments.build do |comment_fields|
+          = comment_fields.label "Add a comment: "
+          br/
+          = comment_fields.text_area :content
+          br/
+        = f.submit "Add Comment"
 
     - @post.comments.each do |comment|
       == render partial: "comments/comment", locals: {comment: comment}
+
 
   - if policy(@post).edit?
     => link_to "Edit", edit_post_path(@post)
