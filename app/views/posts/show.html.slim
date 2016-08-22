@@ -19,10 +19,11 @@
       == render partial: 'comment_form', locals: {post: @post}
 
     - @post.comments.each do |comment|
-      p
+      p class="comment"
         - if comment.user
           => comment.user.full_name
           | says:
+          br/
           =< comment.content
 
 
