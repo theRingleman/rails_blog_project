@@ -11,6 +11,10 @@ class PostsController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html {render :show}
+      format.json {render json: @post}
+    end
   end
 
   def edit
