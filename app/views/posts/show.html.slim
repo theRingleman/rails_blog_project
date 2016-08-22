@@ -1,16 +1,11 @@
 .container
 
-  h1= @post.title
+  h1.postTitle = @post.title
 
-  p= @post.content
+  p.postContent = @post.content
 
-  p
+  p.authorName
     | Author: #{@post.author.full_name}
-
-  .tags
-    h2 Tags
-    - @post.tags.each do |tag|
-      p=> link_to tag.name, tag
 
   .comments
     h2 Comments:
@@ -31,4 +26,7 @@
     => link_to "Edit", edit_post_path(@post)
 
   - if policy(@post).destroy?
-    = link_to "Delete", @post, method: :delete, data: { confirm: 'Are you sure?' }
+    => link_to "Delete", @post, method: :delete, data: { confirm: 'Are you sure?' }
+
+  a.js-next data-id="#{@post.id}" href="#"
+    | Next
