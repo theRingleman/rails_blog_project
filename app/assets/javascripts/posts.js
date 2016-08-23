@@ -9,6 +9,8 @@ function nextPost() {
       // re-set the id to current on the link
       $(".js-next").attr("data-id", post.id);
       renderComments(post.comments);
+    }).fail(function() {
+      $('#flash').append("<p>Sorry, there are more posts on the way!</p>");
     });
   });
 }
