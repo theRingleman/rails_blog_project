@@ -33,7 +33,7 @@ Specs:
 - [x] Include an index page rendered using jQuery and an Active Model Serialization JSON backend. - This is done when the comments on the post show page is loaded via AJAX, I also am going to do the post index page with an excerpt.
 - [x] Include at least one has_many relationship in information rendered via JSON - Again when you load the post show via json the comments are also loaded.
 - [x] Include at least one link that loads or updates a resource without reloading the page - When you click on the next link in a post show page, it renders the next page!
-- [ ] Must use your Rails API and a form to create a resource and render the response without a page refresh. - This is going to be implemented by adding a new comment!
+- [x] Must use your Rails API and a form to create a resource and render the response without a page refresh. - When adding a new comment, everything is done via ajax!
 - [ ] Translate JSON responses into js model objects
 - [ ] At least one of the js model objects must have at least one method added by your code to the prototype
 
