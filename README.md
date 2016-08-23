@@ -64,6 +64,6 @@ bundle; script/server
 ## Impacted Areas in Application
 List general components of the application that this PR will affect:
 
-
+## Conclusion
 
 Thanks for looking and if you would like to use it feel free!
