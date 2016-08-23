@@ -20,6 +20,50 @@ The authentication is devise and also has facebook-omniauth for signup and sign 
 
 Authorization is included with pundit. You can change the policies to how you see fit.
 
-There are some tests, and as always I need to write more.
+Bootstrap is used for the very limited styling that is included. This can easily be switched out with any other framework or custom css as only the navigation bar utilizes bootstrap.
+
+There are some tests, and as always I need to write more. To run the tests, run `rspec`.
+
+## Known Bugs
+
+- [ ] Any time a comment is made it is duplicated.
+- [ ] AJAX loading next post page does not update the url.
+
+## License
+
+MIT
+
+# Contribution Guide
+
+## Status
+**READY/IN DEVELOPMENT/HOLD**
+
+## Migrations
+YES | NO
+
+## Description
+A few sentences describing the overall goals of the pull request's commits.
+
+## Todos
+- [ ] Tests
+- [ ] Documentation
+
+## Deploy Notes
+Notes regarding deployment the contained body of work.  These should note any
+db migrations, etc.
+
+## Steps to Test or Reproduce
+Outline the steps to test or reproduce the PR here.
+
+```sh
+git pull --prune
+git checkout <feature_branch>
+bundle; script/server
+```
+
+## Impacted Areas in Application
+List general components of the application that this PR will affect:
+
+
 
 Thanks for looking and if you would like to use it feel free!
