@@ -29,15 +29,16 @@ Also just to note my ideas. I am planning on using this as a skeleton for future
 
 Specs:
 - [x] Use jQuery for implementing new requirements
-- [ ] Include a show page rendered using jQuery and an Active Model Serialization JSON backend.
-- [ ] Include an index page rendered using jQuery and an Active Model Serialization JSON backend.
-- [ ] Include at least one has_many relationship in information rendered via JSON
-- [ ] Include at least one link that loads or updates a resource without reloading the page
+- [x] Include a show page rendered using jQuery and an Active Model Serialization JSON backend. - The post show page is rendered via AJAX when someone clicks on the next button.
+- [x] Include an index page rendered using jQuery and an Active Model Serialization JSON backend. - This is done when the comments on the post show page is loaded via AJAX, I also am going to do the post index page with an excerpt.
+- [x] Include at least one has_many relationship in information rendered via JSON - Again when you load the post show via json the comments are also loaded.
+- [x] Include at least one link that loads or updates a resource without reloading the page - When you click on the next link in a post show page, it renders the next page!
+- [ ] Must use your Rails API and a form to create a resource and render the response without a page refresh. - This is going to be implemented by adding a new comment!
 - [ ] Translate JSON responses into js model objects
 - [ ] At least one of the js model objects must have at least one method added by your code to the prototype
 
 Confirm
-- [ ] You have a large number of small Git commits
-- [ ] Your commit messages are meaningful
-- [ ] You made the changes in a commit that relate to the commit message
-- [ ] You don't include changes in a commit that aren't related to the commit message
+- [x] You have a large number of small Git commits - yup pushing 100 right now!
+- [x] Your commit messages are meaningful - This I am good at, at least I feel that way!
+- [x] You made the changes in a commit that relate to the commit message - Always, otherwise it just doesnt make any sense.
+- [x] You don't include changes in a commit that aren't related to the commit message - I know that this has happened, but I try to keep that at an absolute minimum.
