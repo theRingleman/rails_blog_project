@@ -15,8 +15,10 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require posts
+//= require comments
 //= require_tree .
 
 $(document).ready(function(){
   nextPost();
+  newComment();
 })
