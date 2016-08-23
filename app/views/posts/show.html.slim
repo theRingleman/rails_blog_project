@@ -14,14 +14,14 @@
       == render partial: 'comment_form', locals: {post: @post}
 
     - @post.comments.each do |comment|
-      p class="comment"
+      p class="comment-username"
         - if comment.user
           => comment.user.full_name
           | says:
           br/
-          =< comment.content
-
-
+      p.comment-content
+        => comment.content
+      
   - if policy(@post).edit?
     => link_to "Edit", edit_post_path(@post)
 
