@@ -8,18 +8,19 @@ function nextPost() {
       $(".postContent").text(post.content);
       // re-set the id to current on the link
       $(".js-next").attr("data-id", post.id);
-      renderComments(post.comments)
+      renderComments(post.comments);
     });
   });
 }
 
 function renderComments(comments) {
-  $('.comment-username').text(comments[0].first_name + " " + comments[0].last_name + " says:");
-  $('.comment-content').text(comments[0].content);
-  for (var i = 1; i < comments.length; i++) {
-    $('.comments').append(
-      $('.comment-username').text(comments[i].first_name + " " + comments[i].last_name + " says:");
-      $('.comment-content').text(comments[i].content);
-    )
-  }
+  $('.comments').empty()
+  // for (var i = 0; i < comments.length; i++) {
+  //   if (comments['user'] != null) {
+  //     $('.comments').append(
+  //       $('.comment-username').html("<p class='comment-username'>" + comments[i]['user'].first_name + " " + comments[i].last_name + " says: </p><br>");
+  //       $('.comment-content').html("<p class='comment-content'>" + comments[i].content + "</p>");
+  //     );
+  //   }
+  // }
 }
