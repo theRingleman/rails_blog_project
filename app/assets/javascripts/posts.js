@@ -3,11 +3,7 @@ function nextPost() {
     event.preventDefault();
     var nextId = parseInt($(".js-next").attr("data-id")) + 1;
     $.get("/posts/" + nextId + ".json", function(post) {
-      // get post
-      $(".postTitle").text(post.title);
-      $(".postContent").text(post.content);
-      // re-set the id to current on the link
-      $(".js-next").attr("data-id", post.id);
+      renderPost(post);
       renderComments(post.comments);
     }).fail(function() {
       $('#flash').append("<p>Sorry, there are more posts on the way!</p>");
@@ -25,4 +21,11 @@ function renderComments(comments) {
       );
     }
   });
+}
+
+function renderPost(post) {
+  $(".postTitle").text(post.title);
+  $(".postContent").text(post.content);
+  // re-set the id to current on the link
+  $(".js-next").attr("data-id", post.id);
 }
