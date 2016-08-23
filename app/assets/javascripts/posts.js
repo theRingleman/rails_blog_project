@@ -14,12 +14,10 @@ function nextPost() {
 function renderComments(comments) {
   $('.comments').empty()
   $.each(comments, function(index, comment){
-    if (comment.user != null) {
-      $('.comments').append(
-        "<p class='comment-username'>" + comment['user'].first_name + " " + comment['user'].last_name + " says: </p>",
-        "<p class='comment-content'>" + comment.content + "</p>"
-      );
-    }
+    $('.comments').append(
+      "<p class='comment-username'>" + comment['user'].first_name + " " + comment['user'].last_name + " says: </p>",
+      "<p class='comment-content'>" + comment.content + "</p>"
+    );
   });
 }
 
