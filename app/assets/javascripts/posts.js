@@ -15,12 +15,12 @@ function nextPost() {
 
 function renderComments(comments) {
   $('.comments').empty()
-  // for (var i = 0; i < comments.length; i++) {
-  //   if (comments['user'] != null) {
-  //     $('.comments').append(
-  //       $('.comment-username').html("<p class='comment-username'>" + comments[i]['user'].first_name + " " + comments[i].last_name + " says: </p><br>");
-  //       $('.comment-content').html("<p class='comment-content'>" + comments[i].content + "</p>");
-  //     );
-  //   }
-  // }
+  $.each(comments, function(index, comment){
+    if (comment.user != null) {
+      $('.comments').append(
+        "<p class='comment-username'>" + comment['user'].first_name + " " + comment['user'].last_name + " says: </p>",
+        "<p class='comment-content'>" + comment.content + "</p>"
+      );
+    }
+  });
 }
