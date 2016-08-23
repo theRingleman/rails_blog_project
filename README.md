@@ -26,7 +26,7 @@ There are some tests, and as always I need to write more. To run the tests, run 
 
 ## Known Bugs
 
-- [ ] Any time a comment is made it is duplicated.
+- [x] ~~Any time a comment is made it is duplicated~~.
 - [ ] AJAX loading next post page does not update the url.
 
 ## License
