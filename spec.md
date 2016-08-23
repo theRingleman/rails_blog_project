@@ -38,7 +38,7 @@ Specs:
 - [ ] At least one of the js model objects must have at least one method added by your code to the prototype
 
 Confirm
-- [x] You have a large number of small Git commits - yup pushing 100 right now!
+- [x] You have a large number of small Git commits - yup over 100 right now!
 - [x] Your commit messages are meaningful - This I am good at, at least I feel that way!
-- [x] You made the changes in a commit that relate to the commit message - Always, otherwise it just doesnt make any sense.
+- [x] You made the changes in a commit that relate to the commit message - Always, otherwise it just doesn't make any sense.
 - [x] You don't include changes in a commit that aren't related to the commit message - I know that this has happened, but I try to keep that at an absolute minimum.

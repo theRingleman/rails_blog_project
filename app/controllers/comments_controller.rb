@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.save
     @post.comments << @comment
-    redirect_to post_path(@post)
+    render json: @post, status: 201
   end
 
   private
