@@ -7,20 +7,21 @@
   p.authorName
     | Author: #{@post.author.full_name}
 
-  .comments
+  .comments-section
     h2 Comments:
 
     - if current_user
       == render partial: 'comment_form', locals: {post: @post}
 
-    - @post.comments.each do |comment|
-      p class="comment-username"
-        - if comment.user
-          => comment.user.full_name
-          | says:
-          br/
-      p.comment-content
-        => comment.content
+    .comments
+      - @post.comments.each do |comment|
+        p class="comment-username"
+          - if comment.user
+            => comment.user.full_name
+            | says:
+            br/
+        p.comment-content
+          => comment.content
       
   - if policy(@post).edit?
     => link_to "Edit", edit_post_path(@post)
