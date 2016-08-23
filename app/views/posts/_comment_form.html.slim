@@ -1,7 +1,6 @@
-= form_for @post do |f|
-  = f.fields_for :comments, @post.comments.build do |comment_fields|
-    = comment_fields.label "Add a comment: "
-    br/
-    = comment_fields.text_area :content
-    br/
+= form_for(comment, url: post_comments_path(post)) do |f|
+  = f.label "Add a comment: "
+  br/
+  = f.text_area :content
+  br/
   = f.submit "Add Comment"
