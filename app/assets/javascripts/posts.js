@@ -3,6 +3,7 @@ function nextPost() {
     event.preventDefault();
     var nextId = parseInt($(".js-next").attr("data-id")) + 1;
     $.get("/posts/" + nextId + ".json", function(post) {
+      $(".new_comment").attr("action", "/posts/" + nextId + "/comments")
       renderPost(post);
       renderComments(post.comments);
     }).fail(function() {
